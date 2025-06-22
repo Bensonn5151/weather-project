@@ -86,3 +86,4 @@ tmp/
 # Backup files
 *.bak
 *.backup Weather/weatherdatapipeline.ipynb
+Weather/GITHUB_DEPLOYMENT.md
