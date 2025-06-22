@@ -88,3 +88,4 @@ tmp/
 *.backup Weather/weatherdatapipeline.ipynb
 Weather/GITHUB_DEPLOYMENT.md
 Weather/GITHUB_DEPLOYMENT.md
+Weather/SETUP_SECURE.md
