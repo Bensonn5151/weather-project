@@ -30,13 +30,9 @@ DB_NAME=ben
 CITY=London
 ```
 
-3. **Database Setup**
-```bash
-createdb ben
-python setup_database.py
-```
 
-4. **Run with Airflow**
+
+3. **Run with Airflow**
 ```bash
 export AIRFLOW_HOME=~/airflow
 airflow db init
