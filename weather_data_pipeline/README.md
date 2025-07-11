@@ -31,7 +31,6 @@ CITY=London
 ```
 
 
-
 3. **Run with Airflow**
 ```bash
 export AIRFLOW_HOME=~/airflow
@@ -117,7 +116,6 @@ weather_data = {
     'source': 'api'       # Which API call? When?
 }
 ```
-
 ## SCD Type 2 Solution
 
 ### How SCD Type 2 Solves These Problems
