@@ -1,6 +1,6 @@
 # Weather Data Pipeline & Dashboard
 
-## This project automates a weather data pipeline using **Apache Airflow** and visualizes the data with a **Streamlit** dashboard. It extracts weather forecasts from the OpenWeatherMap API, stores them in a PostgreSQL database using **SCD Type 2** for historical tracking, and provides an interactive dashboard for data exploration.
+This project automates a weather data pipeline using **Apache Airflow** and visualizes the data with a **Streamlit** dashboard. It extracts weather forecasts from the OpenWeatherMap API, stores them in a PostgreSQL database using **SCD Type 2** for historical tracking, and provides an interactive dashboard for data exploration.
 
 ## Why This Project?
 - **Airflow**: Automates and schedules data extraction, transformation, and loading (ETL).
