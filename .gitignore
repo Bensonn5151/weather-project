@@ -1,0 +1,100 @@
+# Environment Variables and Secrets
+.env
+*.env
+.env.local
+.env.production
+.env.staging
+
+# API Keys and Credentials
+secrets.json
+credentials.json
+config.json
+api_keys.txt
+
+# Database Files
+*.db
+*.sqlite
+*.sqlite3
+
+# Generated Data Files
+*.csv
+weather_forecast_json.csv
+weather_data_scd.csv
+*.xlsx
+*.xls
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints/
+
+# Virtual Environment
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Backup files
+*.bak
+*.backup Weather/weatherdatapipeline.ipynb
+
+SETUP_SECURE.md
+GITHUB_DEPLOYMENT.md
+weatherdatapipeline.ipynb
+weather_airflow_docker/.env
+
+config_example.env
+testing.ipynb
+read.md
+query.sqlite
+weather.parquet
+dags/
