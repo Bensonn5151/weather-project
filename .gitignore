@@ -95,6 +95,6 @@ weather_airflow_docker/.env
 config_example.env
 testing.ipynb
 read.md
-query.sqlite
+query.sql
 weather.parquet
 dags/
