@@ -13,9 +13,11 @@ OpenWeatherMap API → Airflow ETL → PostgreSQL (SCD Type 2) → Streamlit Das
 
 ## Prerequisites
 - Python 3.8+
-- PostgreSQL
+- PostgreSQL(containerized)
+- Docker
 - OpenWeatherMap API key
-- Airflow and Streamlit dependencies
+- Airflow(conterized)
+- Streamlit
 
 ## Setup Instructions
 
@@ -32,16 +34,24 @@ DB_PORT=5432
 DB_NAME=weather_db
 CITY=London
 
-## 3. Set Up Airflowbash
+- The Airflow stack mounts `../.env` into the container at `/opt/airflow/.env`.
 
-export AIRFLOW_HOME=~/airflow
-airflow db init
-airflow users create --username admin --firstname First --lastname Last --role Admin --email admin@example.com
-# Copy `dags/weather_pipeline_dag.py` to your Airflow `dags/` folder
-airflow scheduler &
-airflow webserver &
+## 3. Run the Airflow stack
+```bash
+cd weather_airflow_docker
+# Start services
+docker compose up -d
+# View web UI
+open http://localhost:8081
+```
+- Airflow admin user/password are set in `docker-compose.yaml`.
+- Postgres service is exposed on `localhost:5433` (see compose for creds).
 
-Access Airflow at http://localhost:8080, enable weather_pipeline_dag, and trigger it.
+4) Trigger pipelines
+- In Airflow UI, unpause and trigger:
+  - weather_pipeline_dag
+
+
 
 ## 4. Run the Streamlit Dashboardbash
 
@@ -93,4 +103,3 @@ CREATE TABLE weather_data_scd (
 - Real-time data streaming with Apache Kafka
 - Machine learning for forecast accuracy
 - Multi-source data integration
-
