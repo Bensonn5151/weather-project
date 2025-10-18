@@ -7,7 +7,7 @@ x-airflow-common:
     - airflow-network
   environment: &airflow-common-env
     AIRFLOW__CORE__EXECUTOR: LocalExecutor
-    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://postgres:bens@postgres_weather/weather_app
+    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://postgres:bens@postgres/weather_app
     AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
     AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
     AIRFLOW__API__SECRET_KEY: 'airflow'
@@ -17,22 +17,21 @@ x-airflow-common:
     _AIRFLOW_WWW_USER_CREATE: 'true'
     _AIRFLOW_WWW_USER_USERNAME: 'admin'
     _AIRFLOW_WWW_USER_PASSWORD: 'admin'
-    PYTHONPATH: "/opt/airflow/dags:/opt/airflow/weather_data_pipeline"
+    PYTHONPATH: "/opt/airflow/dags:/opt/airflow/weather-project"
     _PIP_ADDITIONAL_REQUIREMENTS: "pandas psycopg2-binary python-dotenv requests"
   volumes:
     - ./dags:/opt/airflow/dags
     - ./logs:/opt/airflow/logs
     - ./plugins:/opt/airflow/plugins
-    - ../weather_data_pipeline:/opt/airflow/weather_data_pipeline
+    - ../:/opt/airflow/weather-project
     - ../.env:/opt/airflow/.env
-    - ../../weather_data_pipeline:/opt/airflow/weather_data_pipeline 
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
-    postgres_weather:
+    postgres:
       condition: service_healthy
 
 services:
-  postgres_weather:
+  postgres:
     image: postgres:15
     networks:
       - airflow-network
