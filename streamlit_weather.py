@@ -190,7 +190,7 @@ weather_icon_map = {
 }
 
 # Display recent weather entries
-for _, row in df_filtered.head(10).iterrows():  # Show first 10 entries
+for _, row in df_filtered.head(30).iterrows():  # Show first 30 entries
     col1, col2, col3, col4 = st.columns([2, 1, 2, 3])
     with col1:
         st.write(row["datetime"].strftime("%Y-%m-%d %H:%M"))
