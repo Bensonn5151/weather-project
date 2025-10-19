@@ -23,8 +23,8 @@ CITY = os.getenv('CITY', 'Calgary')
 DB_USERNAME = os.getenv('DB_USERNAME', 'postgres')
 DB_PASSWORD = os.getenv('DB_PASSWORD')
 DB_HOST = os.getenv('DB_HOST', 'localhost')
-DB_PORT = os.getenv('DB_PORT', '5432')
-DB_NAME = os.getenv('DB_NAME', 'ben')
+DB_PORT = os.getenv('DB_PORT', '5433')
+DB_NAME = os.getenv('DB_NAME', 'weather_app')
 
 # Validate required environment variables
 if not API_KEY:
